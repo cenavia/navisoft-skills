@@ -1,0 +1,15 @@
+---
+description: Load project base rules from ai-specs.
+alwaysApply: true
+---
+
+Use the rules and standards defined in the project's ai-specs:
+
+- **Base rules**: ai-specs/specs/base-standards.mdc
+- **Documentation**: ai-specs/specs/documentation-standards.mdc
+<!-- Add one entry per detected technology (java, node, angular, react, vue). Example: -->
+<!-- - **Java**: ai-specs/specs/java-standards.mdc -->
+<!-- - **Node**: ai-specs/specs/node-standards.mdc -->
+<!-- - **Angular**: ai-specs/specs/angular-standards.mdc -->
+
+Do not assume or infer rules not explicitly stated in these documents.

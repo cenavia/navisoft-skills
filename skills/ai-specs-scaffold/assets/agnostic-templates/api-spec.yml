@@ -1,0 +1,11 @@
+openapi: 3.0.3
+info:
+  title: {{PROJECT_NAME}} API
+  description: |
+    REST API for {{PROJECT_NAME}}. Development rules and conventions are in ai-specs/specs.
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+    description: Local development
+paths: {}
+# Add paths as the project defines endpoints (e.g. /health, domain routes).
