@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{PROJECT_NAME}} — Color Palette</title>
+  <style>
+    /* ── Reset & base ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      padding: 40px;
+      max-width: 960px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      letter-spacing: -0.3px;
+    }
+
+    /* ── Section ─────────────────────────────────── */
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section-header {
+      background: #000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      letter-spacing: 0.4px;
+    }
+
+    /* ── Grid layouts ─────────────────────────────── */
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    /* Two-column layout for Accent + Signal side by side */
+    .grid-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* ── Color entry ──────────────────────────────── */
+    .color-entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .swatch-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* Large swatch */
+    .swatch {
+      width: 80px;
+      height: 80px;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+
+    /* Small swatch (80% variant or secondary) */
+    .swatch-sm {
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+
+    /* Signal swatch */
+    .swatch-signal {
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+
+    .color-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    .color-name {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .color-hex {
+      font-size: 12px;
+      color: #555;
+    }
+
+    .color-rgb {
+      font-size: 11px;
+      color: #888;
+    }
+
+    /* ── White swatch needs visible border ────────── */
+    .swatch-white {
+      border: 1px solid #ccc !important;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>{{PROJECT_NAME}} — Color Palette</h1>
+
+  <!-- ══════════════════════════════════════════════
+       PRIMARY COLORS
+  ═══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">Primary Colors</div>
+    <div class="grid">
+
+      <!-- White -->
+      <div class="color-entry">
+        <div class="swatch swatch-white" style="background:#ffffff;"></div>
+        <div class="color-info">
+          <span class="color-name">White</span>
+          <span class="color-hex">Hex: #ffffff</span>
+          <span class="color-rgb">RGB: 255, 255, 255</span>
+        </div>
+      </div>
+
+      <!-- Blue + 80% variant -->
+      <div class="color-entry">
+        <div class="swatch-group">
+          <div class="swatch" style="background:#0019ff;"></div>
+          <div class="swatch-sm" style="background:#3347ff;"></div>
+        </div>
+        <div class="color-info">
+          <span class="color-name">Blue</span>
+          <span class="color-hex">Hex: #0019ff</span>
+          <span class="color-rgb">RGB: 0, 25, 255</span>
+          <br/>
+          <span class="color-name" style="margin-top:4px;">80% Blue</span>
+          <span class="color-hex">Hex: #3347ff</span>
+          <span class="color-rgb">RGB: 51, 71, 255</span>
+        </div>
+      </div>
+
+      <!-- Light Blue + 80% variant -->
+      <div class="color-entry">
+        <div class="swatch-group">
+          <div class="swatch" style="background:#00cfff;"></div>
+          <div class="swatch-sm" style="background:#33d8ff;"></div>
+        </div>
+        <div class="color-info">
+          <span class="color-name">Light Blue</span>
+          <span class="color-hex">Hex: #00cfff</span>
+          <span class="color-rgb">RGB: 0, 206, 255</span>
+          <br/>
+          <span class="color-name" style="margin-top:4px;">80% Light Blue</span>
+          <span class="color-hex">Hex: #33d8ff</span>
+          <span class="color-rgb">RGB: 51, 216, 255</span>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Primary Colors -->
+
+
+  <!-- ══════════════════════════════════════════════
+       ACCENT + SIGNAL (side by side)
+  ═══════════════════════════════════════════════ -->
+  <div class="grid-split">
+
+    <!-- Accent Colors -->
+    <div class="section">
+      <div class="section-header">Accent Colors</div>
+      <div class="grid">
+
+        <!-- Black -->
+        <div class="color-entry">
+          <div class="swatch" style="background:#000000;"></div>
+          <div class="color-info">
+            <span class="color-name">Black</span>
+            <span class="color-hex">Hex: #000000</span>
+            <span class="color-rgb">RGB: 0, 0, 0</span>
+          </div>
+        </div>
+
+        <!-- Purple + 80% variant -->
+        <div class="color-entry">
+          <div class="swatch-group">
+            <div class="swatch" style="background:#6e12ff;"></div>
+            <div class="swatch-sm" style="background:#8b41ff;"></div>
+          </div>
+          <div class="color-info">
+            <span class="color-name">Purple</span>
+            <span class="color-hex">Hex: #6e12ff</span>
+            <span class="color-rgb">RGB: 110, 18, 255</span>
+            <br/>
+            <span class="color-name" style="margin-top:4px;">80% Purple</span>
+            <span class="color-hex">Hex: #8b41ff</span>
+            <span class="color-rgb">RGB: 139, 65, 255</span>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /Accent Colors -->
+
+    <!-- Signal Colors -->
+    <div class="section">
+      <div class="section-header">Signal Colors</div>
+      <div class="grid" style="flex-direction:column; gap:12px;">
+
+        <div class="color-entry">
+          <div class="swatch-signal" style="background:#ff0000;"></div>
+          <div class="color-info">
+            <span class="color-name">Red</span>
+            <span class="color-hex">Hex: #ff0000</span>
+            <span class="color-rgb">RGB: 255, 0, 0</span>
+          </div>
+        </div>
+
+        <div class="color-entry">
+          <div class="swatch-signal" style="background:#ffff00; border:1px solid #ddd;"></div>
+          <div class="color-info">
+            <span class="color-name">Yellow</span>
+            <span class="color-hex">Hex: #ffff00</span>
+            <span class="color-rgb">RGB: 255, 255, 0</span>
+          </div>
+        </div>
+
+        <div class="color-entry">
+          <div class="swatch-signal" style="background:#5fc333;"></div>
+          <div class="color-info">
+            <span class="color-name">Green</span>
+            <span class="color-hex">Hex: #5fc333</span>
+            <span class="color-rgb">RGB: 95, 195, 51</span>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /Signal Colors -->
+
+  </div><!-- /grid-split -->
+
+
+  <!-- ══════════════════════════════════════════════
+       "POP" COLORS
+  ═══════════════════════════════════════════════ -->
+  <div class="section" style="margin-top:32px;">
+    <div class="section-header">"Pop" Colors</div>
+    <div class="grid">
+
+      <!-- Lime -->
+      <div class="color-entry">
+        <div class="swatch" style="background:#c5ef14;"></div>
+        <div class="color-info">
+          <span class="color-name">Lime</span>
+          <span class="color-hex">Hex: #c5ef14</span>
+          <span class="color-rgb">RGB: 196, 238, 20</span>
+        </div>
+      </div>
+
+      <!-- Grey -->
+      <div class="color-entry">
+        <div class="swatch" style="background:#939598;"></div>
+        <div class="color-info">
+          <span class="color-name">Grey</span>
+          <span class="color-hex">Hex: #939598</span>
+          <span class="color-rgb">RGB: 147, 149, 152</span>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /Pop Colors -->
+
+</body>
+</html>
